@@ -1,0 +1,361 @@
+﻿
+@{
+    ViewBag.Title = "Array";
+}
+
+<h2>Array</h2>
+
+<section>
+    <h3>forEach function</h3>
+    <p>Array.forEach() calls a function for each array element.</p>
+    <p>Array.forEach() is not supported in Internet Explorer 8 or earlier.</p>
+    <p id="forEach"></p>
+</section>
+<section>
+    <h3>isArray function</h3>
+    <p>To solve this problem ECMAScript 5 defines a new method Array.isArray():</p>
+    <p id="isArray"></p>
+</section>
+<section>
+    <h3>join function</h3>
+    <p>The join() method also joins all array elements into a string.</p>
+    <p id="join"></p>
+</section>
+<section>
+    <h3>pop function</h3>
+    <p>The pop() method removes the last element from an array.</p>
+    <p id="pop1"></p>
+    <p id="pop2"></p>
+</section>
+<section>
+    <h3>push function</h3>
+    <p>The push() method returns the new array length.</p>
+    <p id="push1"></p>
+    <p id="push2"></p>
+</section>
+<section>
+    <h3>shift function</h3>
+    <p>The shift() method removes the first element of an array (and "shifts" all other elements to the left):</p>
+    <p id="shift1"></p>
+    <p id="shift2"></p>
+</section>
+<section>
+    <h3>unshift function</h3>
+    <p>The unshift() method adds new elements to the beginning of an array.</p>
+    <p id="unshift1"></p>
+    <p id="unshift2"></p>
+</section>
+<section>
+    <h3>delete function</h3>
+    <p>Since JavaScript arrays are objects, elements can be deleted by using the JavaScript operator delete: </p>
+    <p id="delete1"></p>
+    <p id="delete2"></p>
+</section>
+<section>
+    <h3>splice function</h3>
+    <p>The splice() method adds new elements to an array.</p>
+    <p>
+        The first parameter (0) defines the position where new elements should be added (spliced in).<br />
+        The second parameter (1) defines how many elements should be removed.<br />
+        The rest of the parameters are omitted. No new elements will be added.<br />
+    </p>
+    <p id="splice1"></p>
+    <p id="splice2"></p>
+</section>
+<section>
+    <h3>concat function</h3>
+    <p>The concat() method is used to merge (concatenate) arrays:</p>
+    <p id="concat1"></p>
+    <p id="concat2"></p>
+    <p id="concat3"></p>
+</section>
+<section>
+    <h3>slice function</h3>
+    <p>When the slice() method is given two arguments, it selects array elements from the start argument, and up to (but not included) the end argument:</p>
+    <p id="slice1"></p>
+    <p id="slice2"></p>
+    <p id="slice3"></p>
+</section>
+<section>
+    <h3>sort and Reverse function</h3>
+    <p>By combining sort() and reverse() you can sort an array in descending order.</p>
+    <p id="sortAndReverse1"></p>
+    <p id="sortAndReverse2"></p>
+    <p id="sortAndReverse3"></p>
+</section>
+<section>
+    <h3>Numeric Sort</h3>
+    <p id="numericSort1"></p>
+    <p id="numericSort2"></p>
+</section>
+<section>
+    <h3>Random Sort</h3>
+    <p id="randomSort1"></p>
+    <p id="randomSort2"></p>
+</section>
+<section>
+    <h3>Array Max</h3>
+    <p id="arrayMax1"></p>
+    <p id="arrayMax2"></p>
+</section>
+<section>
+    <h3>Sort Object</h3>
+    <p id="sortObject1"></p>
+    <p id="sortObject2"></p>
+</section>
+<section>
+    <h3>map Function</h3>
+    <p>Creates a new array by performing a function on each array element.</p>
+    <p id="map1"></p>
+    <p id="map2"></p>
+</section>
+<section>
+    <h3>filter Function</h3>
+    <p>Creates a new array with all array elements that passes a test.</p>
+    <p id="filter1"></p>
+    <p id="filter2"></p>
+</section>
+<section>
+    <h3>reduce and reduceRight Function</h3>
+    <p>The reduce() method runs a function on each array element to produce (reduce it to) a single value.</p>
+    <p id="reduce1"></p>
+    <p id="reduce2"></p>
+    <p id="reduce3"></p>
+</section>
+<section>
+    <h3>every and some Function</h3>
+    <p>The every() method checks if all array values pass a test.</p>
+    <p id="every1"></p>
+    <p id="every2"></p>
+    <p id="some"></p>
+</section>
+<section>
+    <h3>indexOf and lastIndexOf Function</h3>
+    <p>The indexOf() and lastIndexOf() does not work in Internet Explorer 8 and earlier versions.</p>
+    <p id="indexOf1"></p>
+    <p id="indexOf2"></p>
+    <p id="lastIndexOf"></p>
+</section>
+<section>
+    <h3>find And findIndex Function</h3>
+    <p id="findAndFindIndex"></p>
+    <p id="findAndFindIndex1"></p>
+    <p id="findAndFindIndex2"></p>
+</section>
+<script>
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+    forEach();
+    isArray();
+    join();
+    pop();
+    push();
+    shift();
+    unshift();
+    _delete();
+    splice();
+    concat();
+    slice();
+    sortAndReverse();
+    numericSort();
+    randomSort();
+    arrayMax();
+    sortObject();
+    map();
+    filter();
+    reduce();
+    every();
+    indexOfAndLastIndexOf();
+    findAndFindIndex();
+
+    function forEach() {
+        var text;
+        text = "<ul>";
+
+        fruits.forEach(function (value) {
+            text += "<li>" + value + "</li>";
+        });
+
+        document.getElementById("forEach").innerHTML = text;
+    }
+
+    function isArray() {
+        var isArray = Array.isArray(fruits);
+
+        document.getElementById("isArray").innerHTML = fruits + " isArray return: " + isArray;
+    }
+
+    function join() {
+        var join = fruits.join(" * ");
+
+        document.getElementById("join").innerHTML = fruits + " join return: " + join;
+    }
+
+    function pop() {
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("pop1").innerHTML = fruits;
+        fruits.pop();
+        document.getElementById("pop2").innerHTML = fruits;
+    }
+
+    function push() {
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("push1").innerHTML = fruits;
+        fruits.push("Kiwi");
+        document.getElementById("push2").innerHTML = fruits;
+    }
+
+    function shift() {
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("shift1").innerHTML = fruits;
+        fruits.shift("Kiwi");
+        document.getElementById("shift2").innerHTML = fruits;
+    }
+
+    function unshift() {
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("unshift1").innerHTML = fruits;
+        fruits.unshift("Lemon");
+        document.getElementById("unshift2").innerHTML = fruits;
+    }
+
+    function _delete() {
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("delete1").innerHTML = fruits;
+        delete fruits[0];
+        document.getElementById("delete2").innerHTML = fruits;
+    }
+
+    function splice() {
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("splice1").innerHTML = fruits;
+        fruits.splice(2, 0, "Lemon", "Kiwi");
+        document.getElementById("splice2").innerHTML = fruits;
+    }
+
+    function concat() {
+        var myGirls = ["Cecilie", "Lone"];
+        var myBoys = ["Emil", "Tobias", "Linus"];
+        var myChildren = myGirls.concat(myBoys);
+        document.getElementById("concat1").innerHTML = myGirls;
+        document.getElementById("concat2").innerHTML = myBoys;
+        document.getElementById("concat3").innerHTML = myChildren;
+    }
+
+    function slice() {
+        var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+        document.getElementById("slice1").innerHTML = fruits;
+        var citrus = fruits.slice(3);
+        document.getElementById("slice2").innerHTML = "fruits.slice(3) return " + citrus;
+        citrus = fruits.slice(1, 3);
+        document.getElementById("slice3").innerHTML = "fruits.slice(1,3) return " + citrus;
+    }
+
+    function sortAndReverse() {
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("sortAndReverse1").innerHTML = fruits;
+        // First sort the array
+        fruits.sort();
+        document.getElementById("sortAndReverse2").innerHTML = fruits;
+        // Then reverse it:
+        fruits.reverse();
+        document.getElementById("sortAndReverse3").innerHTML = fruits;
+    }
+
+    function numericSort() {
+        var points = [40, 100, 1, 5, 25, 10];
+        document.getElementById("numericSort1").innerHTML = points;
+        points.sort(function (a, b) { return a - b; });
+        document.getElementById("numericSort2").innerHTML = "points.sort(function (a, b) { return a - b; }) return " + points;
+    }
+
+    function randomSort() {
+        var points = [40, 100, 1, 5, 25, 10];
+        document.getElementById("randomSort1").innerHTML = points;
+        points.sort(function (a, b) { return 0.5 - Math.random(); });
+        document.getElementById("randomSort2").innerHTML = "points.sort(function (a, b) { return 0.5 - Math.random(); }) return " + points;
+    }
+
+    function arrayMax() {
+        var points = [40, 100, 1, 5, 25, 10];
+        document.getElementById("arrayMax1").innerHTML = points;
+        document.getElementById("arrayMax2").innerHTML = "Math.max.apply(null, points) return " + Math.max.apply(null, points);
+    }
+
+    function sortObject() {
+        var cars = [
+            { type: "Volvo", year: 2016 },
+            { type: "Saab", year: 2001 },
+            { type: "BMW", year: 2010 }
+        ];
+
+        document.getElementById("sortObject1").innerHTML =
+            cars[0].type + " " + cars[0].year + "<br>" +
+            cars[1].type + " " + cars[1].year + "<br>" +
+            cars[2].type + " " + cars[2].year;
+
+        cars.sort(function (a, b) {
+            var x = a.type.toLowerCase();
+            var y = b.type.toLowerCase();
+            if (x < y) { return -1; }
+            if (x > y) { return 1; }
+            return 0;
+        });
+
+        document.getElementById("sortObject2").innerHTML =
+            cars[0].type + " " + cars[0].year + "<br>" +
+            cars[1].type + " " + cars[1].year + "<br>" +
+            cars[2].type + " " + cars[2].year;
+    }
+
+    function map() {
+        var numbers1 = [45, 4, 9, 16, 25];
+        document.getElementById("map1").innerHTML = numbers1;
+
+        var numbers2 = numbers1.map(function (value, index, array) { return value * 2; });
+        document.getElementById("map2").innerHTML = "numbers1.map(function (value, index, array) { return value * 2;}) return " + numbers2;
+    }
+
+    function filter() {
+        var numbers = [45, 4, 9, 16, 25];
+        document.getElementById("filter1").innerHTML = "numbers = " + numbers;
+        var over18 = numbers.filter(function (value, index, array) { return value > 18; });
+        document.getElementById("filter2").innerHTML = "numbers.filter(function (value, index, array) { return value > 18; }) return " + over18;
+    }
+
+    function reduce() {
+        var numbers = [45, 4, 9, 16, 25];
+        document.getElementById("reduce1").innerHTML = "numbers = " + numbers;
+        var sum = numbers.reduce(function (total, value, index, array) { return total + value; });
+        document.getElementById("reduce2").innerHTML = "numbers.reduce(function (total, value, index, array) { return total + value; }) return " + sum;
+        sum = numbers.reduceRight(function myFunction(total, value, index, array) { return total + value; });
+        document.getElementById("reduce3").innerHTML = "numbers.reduceRight(function myFunction(total, value, index, array) { return total + value; }) return " + sum;
+    }
+
+    function every() {
+        var numbers = [45, 4, 9, 16, 25];
+        document.getElementById("every1").innerHTML = numbers;
+        var allOver18 = numbers.every(function (value) { return value > 18; });
+        document.getElementById("every2").innerHTML = "All over 18 is " + allOver18;
+        var some = numbers.some(function (value) { return value > 18; });
+        document.getElementById("some").innerHTML = "Some over 18 is " + some;
+    }
+
+    function indexOfAndLastIndexOf() {
+        var fruits = ["Apple", "Orange", "Apple", "Mango"];
+        document.getElementById("indexOf1").innerHTML = fruits;
+        var a = fruits.indexOf("Apple");
+        document.getElementById("indexOf2").innerHTML = "Apple is found in position " + (a + 1);
+        a = fruits.lastIndexOf("Apple");
+        document.getElementById("lastIndexOf").innerHTML = "Apple is found in position " + (a + 1);
+    }
+
+    function findAndFindIndex() {
+        var numbers = [4, 9, 16, 25, 29];
+        document.getElementById("findAndFindIndex").innerHTML = "First number is " + numbers;
+        var first = numbers.find(function (value, index, array) { return value > 18; });
+        document.getElementById("findAndFindIndex1").innerHTML = "First number over 18 is " + first;
+        first = numbers.findIndex(function (value, index, array) { return value > 18; });
+        document.getElementById("findAndFindIndex2").innerHTML = "First number index over 18 is " + first;
+    }
+</script>
